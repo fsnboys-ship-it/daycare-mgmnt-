@@ -131,7 +131,7 @@ export const ReportsPage: React.FC = () => {
       <div className="flex items-center justify-between gap-3">
         <div>
           <h2 className="text-xl font-black text-slate-900 tracking-tight">Reports &amp; Analytics</h2>
-          <p className="text-xs text-[#1B4332] font-semibold uppercase tracking-wider">Attendance · Fees · Enrollment · Export</p>
+          <p className="text-xs text-[#0098db] font-semibold uppercase tracking-wider">Attendance · Fees · Enrollment · Export</p>
         </div>
       </div>
 
@@ -141,12 +141,12 @@ export const ReportsPage: React.FC = () => {
         <div className="flex items-center gap-2">
           <label className="text-xs font-bold text-slate-500">From</label>
           <input type="date" value={rangeStart} onChange={e => setRangeStart(e.target.value)}
-            className="px-3 py-1.5 bg-slate-50 border border-slate-200 rounded-xl text-xs font-medium outline-none focus:border-[#1B4332]" />
+            className="px-3 py-1.5 bg-slate-50 border border-slate-200 rounded-xl text-xs font-medium outline-none focus:border-[#0098db]" />
         </div>
         <div className="flex items-center gap-2">
           <label className="text-xs font-bold text-slate-500">To</label>
           <input type="date" value={rangeEnd} min={rangeStart} onChange={e => setRangeEnd(e.target.value)}
-            className="px-3 py-1.5 bg-slate-50 border border-slate-200 rounded-xl text-xs font-medium outline-none focus:border-[#1B4332]" />
+            className="px-3 py-1.5 bg-slate-50 border border-slate-200 rounded-xl text-xs font-medium outline-none focus:border-[#0098db]" />
         </div>
         {/* Quick shortcuts */}
         <div className="flex gap-1.5 ml-auto">
@@ -156,7 +156,7 @@ export const ReportsPage: React.FC = () => {
             { label: 'Last month', start: new Date(today.getFullYear(), today.getMonth() - 1, 1).toISOString().split('T')[0], end: new Date(today.getFullYear(), today.getMonth(), 0).toISOString().split('T')[0] },
           ].map(q => (
             <button key={q.label} onClick={() => { setRangeStart(q.start); setRangeEnd(q.end); }}
-              className="px-2.5 py-1 rounded-xl bg-slate-100 hover:bg-[#1B4332] hover:text-white text-[10px] font-bold text-slate-600 transition-colors">
+              className="px-2.5 py-1 rounded-xl bg-slate-100 hover:bg-[#0098db] hover:text-white text-[10px] font-bold text-slate-600 transition-colors">
               {q.label}
             </button>
           ))}
@@ -216,7 +216,7 @@ export const ReportsPage: React.FC = () => {
                       const rate = row.total > 0 ? Math.round((row.present / row.total) * 100) : 0;
                       return (
                         <div key={row.name} className="flex items-center gap-4 px-5 py-3">
-                          <div className="w-7 h-7 rounded-xl bg-amber-50 text-[#1B4332] text-[10px] font-black flex items-center justify-center shrink-0">
+                          <div className="w-7 h-7 rounded-xl bg-amber-50 text-[#0098db] text-[10px] font-black flex items-center justify-center shrink-0">
                             {row.name.split(' ').map(n => n[0]).join('').slice(0, 2)}
                           </div>
                           <div className="flex-1 min-w-0">
@@ -336,7 +336,7 @@ export const ReportsPage: React.FC = () => {
                           <span className="font-black text-slate-900">{count}</span>
                         </div>
                         <div className="h-1.5 bg-slate-100 rounded-full overflow-hidden">
-                          <div className="h-full bg-[#1B4332] rounded-full" style={{ width: `${children.length > 0 ? (count / children.length) * 100 : 0}%` }} />
+                          <div className="h-full bg-[#0098db] rounded-full" style={{ width: `${children.length > 0 ? (count / children.length) * 100 : 0}%` }} />
                         </div>
                       </div>
                     ))}
@@ -353,7 +353,7 @@ export const ReportsPage: React.FC = () => {
                   <div className="space-y-1.5 max-h-52 overflow-y-auto">
                     {children.map(c => (
                       <div key={c.id} className="flex items-center gap-2.5 p-2 rounded-xl bg-slate-50">
-                        <div className="w-6 h-6 rounded-lg bg-green-100 text-[#1B4332] text-[9px] font-black flex items-center justify-center shrink-0">
+                        <div className="w-6 h-6 rounded-lg bg-green-100 text-[#0098db] text-[9px] font-black flex items-center justify-center shrink-0">
                           {c.name.split(' ').map(n => n[0]).join('').slice(0, 2)}
                         </div>
                         <div className="min-w-0">

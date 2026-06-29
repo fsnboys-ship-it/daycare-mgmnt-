@@ -177,7 +177,7 @@ export const NotificationsPage: React.FC<NotificationsPageProps> = ({
               resetForm();
               setShowCreateForm(true);
             }}
-            className="px-4 py-2.5 bg-[#1B4332] hover:bg-[#3d7edc] text-white rounded-xl text-xs font-bold flex items-center gap-1.5 shadow-md shadow-blue-100 cursor-pointer"
+            className="px-4 py-2.5 bg-[#0098db] hover:bg-[#3d7edc] text-white rounded-xl text-xs font-bold flex items-center gap-1.5 shadow-md shadow-blue-100 cursor-pointer"
           >
             <Plus className="w-4 h-4" />
             <span>Create New Notice</span>
@@ -196,7 +196,7 @@ export const NotificationsPage: React.FC<NotificationsPageProps> = ({
               placeholder="Search active or drafted notices..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-12 pr-4 py-3.5 bg-white border border-slate-200/80 focus:border-[#1B4332] rounded-2xl text-xs font-semibold outline-none transition-all text-slate-800 shadow-xs"
+              className="w-full pl-12 pr-4 py-3.5 bg-white border border-slate-200/80 focus:border-[#0098db] rounded-2xl text-xs font-semibold outline-none transition-all text-slate-800 shadow-xs"
             />
           </div>
 
@@ -268,7 +268,7 @@ export const NotificationsPage: React.FC<NotificationsPageProps> = ({
                   value={formTitle}
                   onChange={(e) => setFormTitle(e.target.value)}
                   placeholder="e.g. Summer Camp Registration Open"
-                  className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-[#1B4332] focus:bg-white rounded-xl text-xs font-semibold outline-none transition-all"
+                  className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-[#0098db] focus:bg-white rounded-xl text-xs font-semibold outline-none transition-all"
                 />
               </div>
 
@@ -278,7 +278,7 @@ export const NotificationsPage: React.FC<NotificationsPageProps> = ({
                   id="notice-form-type"
                   value={formType}
                   onChange={(e) => setFormType(e.target.value as any)}
-                  className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-[#1B4332] focus:bg-white rounded-xl text-xs font-semibold outline-none transition-all"
+                  className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-[#0098db] focus:bg-white rounded-xl text-xs font-semibold outline-none transition-all"
                 >
                   <option value="General">General Announcement</option>
                   <option value="Payment">Payment / Tuition Reminder</option>
@@ -293,7 +293,7 @@ export const NotificationsPage: React.FC<NotificationsPageProps> = ({
                   id="notice-form-audience"
                   value={formTargetAudience}
                   onChange={(e) => setFormTargetAudience(e.target.value as any)}
-                  className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-[#1B4332] focus:bg-white rounded-xl text-xs font-semibold outline-none transition-all"
+                  className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-[#0098db] focus:bg-white rounded-xl text-xs font-semibold outline-none transition-all"
                 >
                   <option value="All Parents">All Parents</option>
                   <option value="All Staff">All Teachers & Staff</option>
@@ -309,7 +309,7 @@ export const NotificationsPage: React.FC<NotificationsPageProps> = ({
                     value={formTargetId}
                     onChange={(e) => setFormTargetId(e.target.value)}
                     required
-                    className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-[#1B4332] focus:bg-white rounded-xl text-xs font-semibold outline-none transition-all"
+                    className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-[#0098db] focus:bg-white rounded-xl text-xs font-semibold outline-none transition-all"
                   >
                     <option value="">-- Choose Candidate --</option>
                     {children.map(c => (
@@ -325,7 +325,7 @@ export const NotificationsPage: React.FC<NotificationsPageProps> = ({
                   id="notice-form-priority"
                   value={formPriority}
                   onChange={(e) => setFormPriority(e.target.value as any)}
-                  className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-[#1B4332] focus:bg-white rounded-xl text-xs font-semibold outline-none transition-all"
+                  className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-[#0098db] focus:bg-white rounded-xl text-xs font-semibold outline-none transition-all"
                 >
                   <option value="Normal">Normal</option>
                   <option value="Important">Important</option>
@@ -340,7 +340,7 @@ export const NotificationsPage: React.FC<NotificationsPageProps> = ({
                   type="date"
                   value={formExpiryDate}
                   onChange={(e) => setFormExpiryDate(e.target.value)}
-                  className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-[#1B4332] focus:bg-white rounded-xl text-xs font-semibold outline-none transition-all"
+                  className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-[#0098db] focus:bg-white rounded-xl text-xs font-semibold outline-none transition-all"
                 />
               </div>
 
@@ -355,7 +355,7 @@ export const NotificationsPage: React.FC<NotificationsPageProps> = ({
                 onChange={(e) => setFormMessage(e.target.value)}
                 placeholder="Write clear details of the announcement here..."
                 rows={5}
-                className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-[#1B4332] focus:bg-white rounded-2xl text-xs font-medium outline-none transition-all"
+                className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-[#0098db] focus:bg-white rounded-2xl text-xs font-medium outline-none transition-all"
               />
             </div>
 
@@ -377,7 +377,7 @@ export const NotificationsPage: React.FC<NotificationsPageProps> = ({
                   id="publish-btn"
                   type="button"
                   onClick={(e) => handleSave(e, 'Published')}
-                  className="px-5 py-3 bg-[#1B4332] hover:bg-[#3273d4] text-white font-bold text-xs rounded-xl shadow-md shadow-blue-100 transition-all cursor-pointer"
+                  className="px-5 py-3 bg-[#0098db] hover:bg-[#3273d4] text-white font-bold text-xs rounded-xl shadow-md shadow-blue-100 transition-all cursor-pointer"
                 >
                   Publish Announcement
                 </button>
@@ -412,7 +412,7 @@ export const NotificationsPage: React.FC<NotificationsPageProps> = ({
                   <div className="flex items-start gap-4">
                     {(() => {
                       let IconComponent = Megaphone;
-                      let iconClass = 'bg-amber-50/50 text-[#1B4332]';
+                      let iconClass = 'bg-amber-50/50 text-[#0098db]';
                       if (not.type === 'Emergency') {
                         IconComponent = AlertOctagon;
                         iconClass = 'bg-rose-50 text-rose-600';

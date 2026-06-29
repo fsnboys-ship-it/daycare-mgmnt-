@@ -83,7 +83,7 @@ export const ParentDashboard: React.FC = () => {
   if (loading) {
     return (
       <div className="flex flex-col items-center justify-center py-20">
-        <div className="w-10 h-10 border-4 border-blue-100 border-t-[#1B4332] rounded-full animate-spin mb-4" />
+        <div className="w-10 h-10 border-4 border-blue-100 border-t-[#0098db] rounded-full animate-spin mb-4" />
         <p className="text-xs text-slate-400 font-bold uppercase tracking-wider">Syncing child's live updates...</p>
       </div>
     );
@@ -266,7 +266,7 @@ export const ParentDashboard: React.FC = () => {
                     <div className="pl-1.5">
                       <div className="flex items-center gap-2">
                         <span className="text-xs font-bold text-slate-900">{evt.label}</span>
-                        <span className="text-[10px] text-[#1B4332] font-semibold tracking-wider uppercase px-2 py-0.5 bg-amber-50 border border-blue-100/30 rounded-md">
+                        <span className="text-[10px] text-[#0098db] font-semibold tracking-wider uppercase px-2 py-0.5 bg-amber-50 border border-blue-100/30 rounded-md">
                           {evt.time}
                         </span>
                       </div>
@@ -351,7 +351,7 @@ export const ParentDashboard: React.FC = () => {
               {/* Teacher Notes */}
               {dailyLogs.teacherNotes && (
                 <div className="p-4 bg-amber-50/20 rounded-2xl border border-blue-50 flex flex-col gap-2">
-                  <p className="text-[9px] text-[#1B4332] font-bold uppercase tracking-wider pl-1">Teacher Notes</p>
+                  <p className="text-[9px] text-[#0098db] font-bold uppercase tracking-wider pl-1">Teacher Notes</p>
                   <p className="text-xs text-slate-600 leading-relaxed italic">
                     "{dailyLogs.teacherNotes}"
                   </p>
@@ -380,7 +380,7 @@ export const ParentDashboard: React.FC = () => {
 
         {/* Emergency instructions */}
         <div className="p-5 rounded-3xl bg-amber-50/40 border border-blue-100 flex gap-4.5 items-start">
-          <div className="w-10 h-10 bg-green-100 text-[#1B4332] rounded-2xl flex items-center justify-center shrink-0">
+          <div className="w-10 h-10 bg-green-100 text-[#0098db] rounded-2xl flex items-center justify-center shrink-0">
             <PhoneCall className="w-5 h-5" />
           </div>
           <div>

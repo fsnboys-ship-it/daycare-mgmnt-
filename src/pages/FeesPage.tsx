@@ -247,12 +247,12 @@ export const FeesPage: React.FC = () => {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         <div>
           <h2 className="text-xl font-black text-slate-900 tracking-tight">Fees &amp; Billing</h2>
-          <p className="text-xs text-[#1B4332] font-semibold uppercase tracking-wider">Fee Register · Payment Tracking</p>
+          <p className="text-xs text-[#0098db] font-semibold uppercase tracking-wider">Fee Register · Payment Tracking</p>
         </div>
         {isAdmin && (
           <button
             onClick={() => setShowFeeModal(true)}
-            className="flex items-center gap-2 bg-[#1B4332] hover:bg-green-900 text-white text-xs font-bold px-4 py-2.5 rounded-2xl shadow-sm shadow-green-900/20 transition-colors"
+            className="flex items-center gap-2 bg-[#0098db] hover:bg-green-900 text-white text-xs font-bold px-4 py-2.5 rounded-2xl shadow-sm shadow-green-900/20 transition-colors"
           >
             <Plus className="w-4 h-4" /> Create Fee
           </button>
@@ -304,7 +304,7 @@ export const FeesPage: React.FC = () => {
                 placeholder="Search by student or fee name..."
                 value={searchTerm}
                 onChange={e => setSearchTerm(e.target.value)}
-                className="w-full pl-9 pr-4 py-2.5 bg-white border border-slate-200 rounded-2xl text-xs font-medium outline-none focus:border-[#1B4332] focus:ring-2 focus:ring-green-50 transition-all"
+                className="w-full pl-9 pr-4 py-2.5 bg-white border border-slate-200 rounded-2xl text-xs font-medium outline-none focus:border-[#0098db] focus:ring-2 focus:ring-green-50 transition-all"
               />
             </div>
             <div className="flex gap-1.5 bg-white border border-slate-200 rounded-2xl p-1">
@@ -364,7 +364,7 @@ export const FeesPage: React.FC = () => {
                       <div className="md:hidden space-y-2">
                         <div className="flex items-center justify-between">
                           <div className="flex items-center gap-2.5">
-                            <div className="w-8 h-8 rounded-xl bg-amber-50 text-[#1B4332] text-xs font-black flex items-center justify-center">{initials}</div>
+                            <div className="w-8 h-8 rounded-xl bg-amber-50 text-[#0098db] text-xs font-black flex items-center justify-center">{initials}</div>
                             <div>
                               <p className="text-xs font-bold text-slate-900">{payment.childName}</p>
                               <p className="text-[10px] text-slate-400">{payment.feeName}</p>
@@ -382,7 +382,7 @@ export const FeesPage: React.FC = () => {
                               <>
                                 <button
                                   onClick={() => { setPaymentTarget(payment); setPayAmount(String(payment.pendingAmount)); }}
-                                  className="flex items-center gap-1 bg-[#1B4332] hover:bg-green-900 text-white text-[10px] font-bold px-2.5 py-1.5 rounded-xl transition-colors"
+                                  className="flex items-center gap-1 bg-[#0098db] hover:bg-green-900 text-white text-[10px] font-bold px-2.5 py-1.5 rounded-xl transition-colors"
                                 >
                                   <IndianRupee className="w-3 h-3" /> Pay
                                 </button>
@@ -411,7 +411,7 @@ export const FeesPage: React.FC = () => {
                       {/* Desktop table row */}
                       <div className="hidden md:grid grid-cols-[2fr_1.5fr_1fr_1fr_1fr_auto] gap-3 items-center">
                         <div className="flex items-center gap-2.5 min-w-0">
-                          <div className="w-8 h-8 rounded-xl bg-amber-50 text-[#1B4332] text-xs font-black flex items-center justify-center shrink-0">{initials}</div>
+                          <div className="w-8 h-8 rounded-xl bg-amber-50 text-[#0098db] text-xs font-black flex items-center justify-center shrink-0">{initials}</div>
                           <div className="min-w-0">
                             <p className="text-xs font-bold text-slate-900 truncate">{payment.childName}</p>
                             <p className="text-[10px] text-slate-400 truncate">{child?.parentName || '—'}</p>
@@ -435,7 +435,7 @@ export const FeesPage: React.FC = () => {
                               <button
                                 onClick={() => { setPaymentTarget(payment); setPayAmount(String(payment.pendingAmount)); }}
                                 title="Record payment"
-                                className="w-7 h-7 rounded-xl bg-[#1B4332] hover:bg-green-900 text-white flex items-center justify-center transition-colors"
+                                className="w-7 h-7 rounded-xl bg-[#0098db] hover:bg-green-900 text-white flex items-center justify-center transition-colors"
                               >
                                 <IndianRupee className="w-3.5 h-3.5" />
                               </button>
@@ -496,7 +496,7 @@ export const FeesPage: React.FC = () => {
                   <div className="flex items-start justify-between gap-3">
                     <div className="flex items-start gap-3 min-w-0">
                       <div className="w-10 h-10 rounded-2xl bg-amber-50 flex items-center justify-center shrink-0">
-                        <CreditCard className="w-5 h-5 text-[#1B4332]" />
+                        <CreditCard className="w-5 h-5 text-[#0098db]" />
                       </div>
                       <div className="min-w-0">
                         <h4 className="font-bold text-sm text-slate-900">{fee.name}</h4>
@@ -575,7 +575,7 @@ export const FeesPage: React.FC = () => {
                     value={feeFormName}
                     onChange={e => setFeeFormName(e.target.value)}
                     placeholder="e.g. Monthly Tuition"
-                    className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-medium outline-none focus:border-[#1B4332] focus:ring-2 focus:ring-green-50 transition-all"
+                    className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-medium outline-none focus:border-[#0098db] focus:ring-2 focus:ring-green-50 transition-all"
                     required
                   />
                 </div>
@@ -588,7 +588,7 @@ export const FeesPage: React.FC = () => {
                       value={feeFormAmount}
                       onChange={e => setFeeFormAmount(e.target.value)}
                       placeholder="e.g. 3500"
-                      className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-medium outline-none focus:border-[#1B4332] focus:ring-2 focus:ring-green-50 transition-all"
+                      className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-medium outline-none focus:border-[#0098db] focus:ring-2 focus:ring-green-50 transition-all"
                       required
                     />
                   </div>
@@ -599,7 +599,7 @@ export const FeesPage: React.FC = () => {
                       value={feeFormDueDate}
                       onChange={e => setFeeFormDueDate(e.target.value)}
                       min={todayStr}
-                      className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-medium outline-none focus:border-[#1B4332] focus:ring-2 focus:ring-green-50 transition-all"
+                      className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-medium outline-none focus:border-[#0098db] focus:ring-2 focus:ring-green-50 transition-all"
                       required
                     />
                   </div>
@@ -610,7 +610,7 @@ export const FeesPage: React.FC = () => {
                     <select
                       value={feeFormFreq}
                       onChange={e => setFeeFormFreq(e.target.value as FeeFrequency)}
-                      className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-medium outline-none focus:border-[#1B4332] focus:ring-2 focus:ring-green-50 transition-all"
+                      className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-medium outline-none focus:border-[#0098db] focus:ring-2 focus:ring-green-50 transition-all"
                     >
                       {FEE_FREQUENCIES.map(f => <option key={f} value={f}>{f}</option>)}
                     </select>
@@ -620,7 +620,7 @@ export const FeesPage: React.FC = () => {
                     <select
                       value={feeFormTarget}
                       onChange={e => setFeeFormTarget(e.target.value as 'Individual' | 'Entire Class')}
-                      className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-medium outline-none focus:border-[#1B4332] focus:ring-2 focus:ring-green-50 transition-all"
+                      className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-medium outline-none focus:border-[#0098db] focus:ring-2 focus:ring-green-50 transition-all"
                     >
                       <option value="Entire Class">All students</option>
                       <option value="Individual">One student</option>
@@ -633,7 +633,7 @@ export const FeesPage: React.FC = () => {
                     <select
                       value={feeFormChildId}
                       onChange={e => setFeeFormChildId(e.target.value)}
-                      className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-medium outline-none focus:border-[#1B4332] focus:ring-2 focus:ring-green-50 transition-all"
+                      className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-medium outline-none focus:border-[#0098db] focus:ring-2 focus:ring-green-50 transition-all"
                       required
                     >
                       <option value="">Choose student...</option>
@@ -652,7 +652,7 @@ export const FeesPage: React.FC = () => {
                   <button
                     type="submit"
                     disabled={feeFormSaving}
-                    className="flex-1 py-2.5 rounded-2xl bg-[#1B4332] hover:bg-green-900 text-white text-sm font-bold transition-colors disabled:opacity-60 flex items-center justify-center gap-2"
+                    className="flex-1 py-2.5 rounded-2xl bg-[#0098db] hover:bg-green-900 text-white text-sm font-bold transition-colors disabled:opacity-60 flex items-center justify-center gap-2"
                   >
                     {feeFormSaving ? (
                       <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
@@ -711,7 +711,7 @@ export const FeesPage: React.FC = () => {
                     max={paymentTarget.pendingAmount}
                     value={payAmount}
                     onChange={e => setPayAmount(e.target.value)}
-                    className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-medium outline-none focus:border-[#1B4332] focus:ring-2 focus:ring-green-50 transition-all"
+                    className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-medium outline-none focus:border-[#0098db] focus:ring-2 focus:ring-green-50 transition-all"
                     required
                   />
                 </div>
@@ -725,7 +725,7 @@ export const FeesPage: React.FC = () => {
                         onClick={() => setPayMethod(m)}
                         className={`py-2 rounded-2xl text-xs font-bold border transition-colors ${
                           payMethod === m
-                            ? 'bg-[#1B4332] text-white border-[#1B4332]'
+                            ? 'bg-[#0098db] text-white border-[#0098db]'
                             : 'bg-slate-50 text-slate-600 border-slate-200 hover:border-slate-300'
                         }`}
                       >
@@ -777,7 +777,7 @@ export const FeesPage: React.FC = () => {
               className="bg-white rounded-3xl shadow-2xl w-full max-w-sm overflow-hidden"
             >
               {/* Receipt header */}
-              <div className="bg-[#1B4332] p-5 text-white text-center">
+              <div className="bg-[#0098db] p-5 text-white text-center">
                 <div className="w-10 h-10 rounded-2xl bg-white/20 flex items-center justify-center mx-auto mb-2">
                   <Receipt className="w-5 h-5" />
                 </div>

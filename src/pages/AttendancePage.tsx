@@ -299,7 +299,7 @@ export const AttendancePage: React.FC = () => {
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
           <h2 className="text-xl font-black text-slate-900 tracking-tight flex items-center gap-2">
-            <ClipboardCheck className="w-6 h-6 text-[#1B4332]" />
+            <ClipboardCheck className="w-6 h-6 text-[#0098db]" />
             Attendance & Pickup Control
           </h2>
           <p className="text-xs text-slate-400 font-medium">
@@ -308,7 +308,7 @@ export const AttendancePage: React.FC = () => {
         </div>
         
         {/* Date Display Badge */}
-        <div className="bg-[#1B4332]/10 text-[#1B4332] px-4 py-2 rounded-2xl border border-blue-100 flex items-center gap-2 text-xs font-bold self-start">
+        <div className="bg-[#0098db]/10 text-[#0098db] px-4 py-2 rounded-2xl border border-blue-100 flex items-center gap-2 text-xs font-bold self-start">
           <Calendar className="w-4 h-4" />
           <span>Today: {new Date().toLocaleDateString(undefined, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</span>
         </div>
@@ -406,7 +406,7 @@ export const AttendancePage: React.FC = () => {
           placeholder="Search students by Name or Parent..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          className="w-full pl-12 pr-4 py-3.5 bg-white border border-slate-200/80 focus:border-[#1B4332] rounded-2xl text-xs font-semibold outline-none transition-all text-slate-800 focus:ring-4 focus:ring-blue-100/30"
+          className="w-full pl-12 pr-4 py-3.5 bg-white border border-slate-200/80 focus:border-[#0098db] rounded-2xl text-xs font-semibold outline-none transition-all text-slate-800 focus:ring-4 focus:ring-blue-100/30"
         />
       </div>
 
@@ -445,7 +445,7 @@ export const AttendancePage: React.FC = () => {
                   <div className="pt-2 flex justify-center gap-3">
                     <button
                       onClick={() => setActiveSubTab('pickups')}
-                      className="px-5 py-2.5 bg-[#1B4332] hover:bg-green-900 text-white font-bold text-xs rounded-xl shadow-md transition-all cursor-pointer flex items-center gap-1.5"
+                      className="px-5 py-2.5 bg-[#0098db] hover:bg-green-900 text-white font-bold text-xs rounded-xl shadow-md transition-all cursor-pointer flex items-center gap-1.5"
                     >
                       <span>Manage Pickups</span>
                       <ArrowRight className="w-4 h-4" />
@@ -463,7 +463,7 @@ export const AttendancePage: React.FC = () => {
                   
                   {/* Warning / Instructions Header */}
                   <div className="bg-slate-50 p-5 border-b border-slate-150 flex items-start gap-3">
-                    <div className="w-8 h-8 rounded-lg bg-amber-50 flex items-center justify-center text-[#1B4332] shrink-0 mt-0.5">
+                    <div className="w-8 h-8 rounded-lg bg-amber-50 flex items-center justify-center text-[#0098db] shrink-0 mt-0.5">
                       <Sparkles className="w-4 h-4" />
                     </div>
                     <div>
@@ -480,7 +480,7 @@ export const AttendancePage: React.FC = () => {
                       <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wide">Bulk Actions:</span>
                       <button 
                         onClick={handleSelectAll}
-                        className="text-xs font-bold text-[#1B4332] hover:underline cursor-pointer bg-transparent border-none"
+                        className="text-xs font-bold text-[#0098db] hover:underline cursor-pointer bg-transparent border-none"
                       >
                         Select All
                       </button>
@@ -509,7 +509,7 @@ export const AttendancePage: React.FC = () => {
                           onClick={() => setRollCallView('grid')}
                           className={`p-1.5 rounded-lg transition-all cursor-pointer ${
                             rollCallView === 'grid' 
-                              ? 'bg-white text-[#1B4332] shadow-xs' 
+                              ? 'bg-white text-[#0098db] shadow-xs' 
                               : 'text-slate-400 hover:text-slate-600'
                           }`}
                           title="Grid View (Tap Faceboard)"
@@ -520,7 +520,7 @@ export const AttendancePage: React.FC = () => {
                           onClick={() => setRollCallView('list')}
                           className={`p-1.5 rounded-lg transition-all cursor-pointer ${
                             rollCallView === 'list' 
-                              ? 'bg-white text-[#1B4332] shadow-xs' 
+                              ? 'bg-white text-[#0098db] shadow-xs' 
                               : 'text-slate-400 hover:text-slate-600'
                           }`}
                           title="List View (Compact Detailed Rows)"
@@ -615,7 +615,7 @@ export const AttendancePage: React.FC = () => {
                               <div className="shrink-0 pl-4">
                                 <div className={`w-6.5 h-6.5 rounded-lg border-2 flex items-center justify-center transition-all ${
                                   isSelected 
-                                    ? 'bg-[#1B4332] border-[#1B4332] text-white' 
+                                    ? 'bg-[#0098db] border-[#0098db] text-white' 
                                     : 'border-slate-300 bg-white'
                                 }`}>
                                   {isSelected && <CheckCircle className="w-4 h-4 text-white stroke-[3]" />}
@@ -657,7 +657,7 @@ export const AttendancePage: React.FC = () => {
                   {(!isAttendanceTakenToday || isEditMode) && (
                     <div className="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 w-[92%] z-40 bg-white/95 backdrop-blur-md border border-slate-200/80 p-3.5 rounded-2xl shadow-xl flex items-center justify-between gap-3">
                       <div className="text-[11px] font-extrabold text-slate-500 pl-1.5 shrink-0">
-                        Selected: <span className="text-[#1B4332] font-black">{selectedChildIds.length}</span> / {children.length}
+                        Selected: <span className="text-[#0098db] font-black">{selectedChildIds.length}</span> / {children.length}
                       </div>
                       <div className="flex gap-2">
                         <button
@@ -668,7 +668,7 @@ export const AttendancePage: React.FC = () => {
                         </button>
                         <button
                           onClick={handleSaveAttendance}
-                          className="px-4 py-2 bg-[#1B4332] text-white font-black text-[10px] rounded-xl shadow-md cursor-pointer flex items-center gap-1 shrink-0"
+                          className="px-4 py-2 bg-[#0098db] text-white font-black text-[10px] rounded-xl shadow-md cursor-pointer flex items-center gap-1 shrink-0"
                         >
                           <CheckCircle className="w-3.5 h-3.5" />
                           <span>Save Roll Call</span>
@@ -690,7 +690,7 @@ export const AttendancePage: React.FC = () => {
               <div className="flex justify-between items-center flex-wrap gap-3">
                 <div className="flex items-center gap-3">
                   <h3 className="font-black text-sm text-slate-800 tracking-tight flex items-center gap-1.5">
-                    <Clock className="w-5 h-5 text-[#1B4332]" />
+                    <Clock className="w-5 h-5 text-[#0098db]" />
                     Children Currently In Center
                   </h3>
 
@@ -700,7 +700,7 @@ export const AttendancePage: React.FC = () => {
                       onClick={() => setPickupsView('grid')}
                       className={`p-1.5 rounded-lg transition-all cursor-pointer ${
                         pickupsView === 'grid' 
-                          ? 'bg-white text-[#1B4332] shadow-xs' 
+                          ? 'bg-white text-[#0098db] shadow-xs' 
                           : 'text-slate-400 hover:text-slate-600'
                       }`}
                       title="Grid View"
@@ -711,7 +711,7 @@ export const AttendancePage: React.FC = () => {
                       onClick={() => setPickupsView('list')}
                       className={`p-1.5 rounded-lg transition-all cursor-pointer ${
                         pickupsView === 'list' 
-                          ? 'bg-white text-[#1B4332] shadow-xs' 
+                          ? 'bg-white text-[#0098db] shadow-xs' 
                           : 'text-slate-400 hover:text-slate-600'
                       }`}
                       title="List View"
@@ -1210,7 +1210,7 @@ export const AttendancePage: React.FC = () => {
                       placeholder="e.g. Rohini Gupta"
                       value={pickedBy}
                       onChange={(e) => setPickedBy(e.target.value)}
-                      className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-[#1B4332] rounded-xl text-xs font-semibold outline-none"
+                      className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-[#0098db] rounded-xl text-xs font-semibold outline-none"
                     />
                   </div>
 
@@ -1221,7 +1221,7 @@ export const AttendancePage: React.FC = () => {
                       id="relationship-select"
                       value={relationship}
                       onChange={(e) => setRelationship(e.target.value)}
-                      className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-[#1B4332] rounded-xl text-xs font-semibold outline-none text-slate-700"
+                      className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-[#0098db] rounded-xl text-xs font-semibold outline-none text-slate-700"
                     >
                       <option value="Mother">Mother</option>
                       <option value="Father">Father</option>
@@ -1242,7 +1242,7 @@ export const AttendancePage: React.FC = () => {
                           id="early-reason-select"
                           value={pickupReason}
                           onChange={(e) => setPickupReason(e.target.value)}
-                          className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-[#1B4332] rounded-xl text-xs font-semibold outline-none text-slate-700"
+                          className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-[#0098db] rounded-xl text-xs font-semibold outline-none text-slate-700"
                         >
                           <option value="Doctor Appointment">Doctor Appointment</option>
                           <option value="Family Emergency">Family Emergency</option>
@@ -1262,7 +1262,7 @@ export const AttendancePage: React.FC = () => {
                             placeholder="e.g. Early family vacation travel"
                             value={customReason}
                             onChange={(e) => setCustomReason(e.target.value)}
-                            className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-[#1B4332] rounded-xl text-xs font-semibold outline-none"
+                            className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-[#0098db] rounded-xl text-xs font-semibold outline-none"
                           />
                         </div>
                       )}
@@ -1361,7 +1361,7 @@ export const AttendancePage: React.FC = () => {
                       placeholder="e.g. Parents / Authorized Guardians"
                       value={bulkPickedBy}
                       onChange={(e) => setBulkPickedBy(e.target.value)}
-                      className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-[#1B4332] rounded-xl text-xs font-semibold outline-none"
+                      className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-[#0098db] rounded-xl text-xs font-semibold outline-none"
                     />
                   </div>
 
@@ -1372,7 +1372,7 @@ export const AttendancePage: React.FC = () => {
                       id="bulk-relationship-select"
                       value={bulkRelationship}
                       onChange={(e) => setBulkRelationship(e.target.value)}
-                      className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-[#1B4332] rounded-xl text-xs font-semibold outline-none text-slate-700"
+                      className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-[#0098db] rounded-xl text-xs font-semibold outline-none text-slate-700"
                     >
                       <option value="Authorized Guardian">Authorized Guardian/Parent</option>
                       <option value="Mother">Mother</option>

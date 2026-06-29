@@ -195,7 +195,7 @@ export const ChildrenList: React.FC<ChildrenListProps> = ({
               resetForm();
               setShowAddForm(true);
             }}
-            className="px-4 py-2.5 bg-[#1B4332] hover:bg-[#3d7edc] text-white rounded-xl text-xs font-bold flex items-center gap-1.5 shadow-md shadow-blue-100 cursor-pointer"
+            className="px-4 py-2.5 bg-[#0098db] hover:bg-[#3d7edc] text-white rounded-xl text-xs font-bold flex items-center gap-1.5 shadow-md shadow-blue-100 cursor-pointer"
           >
             <Plus className="w-4 h-4" />
             <span>Enroll New Child</span>
@@ -213,7 +213,7 @@ export const ChildrenList: React.FC<ChildrenListProps> = ({
             placeholder="Search by Child Name, Parent Name, or Phone..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full pl-12 pr-4 py-3.5 bg-white border border-slate-200/80 focus:border-[#1B4332] rounded-2xl text-xs font-semibold outline-none transition-all text-slate-800 focus:ring-4 focus:ring-blue-100/50"
+            className="w-full pl-12 pr-4 py-3.5 bg-white border border-slate-200/80 focus:border-[#0098db] rounded-2xl text-xs font-semibold outline-none transition-all text-slate-800 focus:ring-4 focus:ring-blue-100/50"
           />
         </div>
       )}
@@ -272,7 +272,7 @@ export const ChildrenList: React.FC<ChildrenListProps> = ({
                         type="button"
                         onClick={() => setFormPhotoUrl(ph)}
                         className={`w-10 h-10 rounded-xl overflow-hidden border-2 transition-all shrink-0 ${
-                          formPhotoUrl === ph ? 'border-[#1B4332] scale-105' : 'border-slate-200 opacity-60 hover:opacity-100'
+                          formPhotoUrl === ph ? 'border-[#0098db] scale-105' : 'border-slate-200 opacity-60 hover:opacity-100'
                         }`}
                       >
                         <img src={ph} alt="" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
@@ -310,7 +310,7 @@ export const ChildrenList: React.FC<ChildrenListProps> = ({
                   value={formName}
                   onChange={(e) => setFormName(e.target.value)}
                   placeholder="e.g. Aarav Sharma"
-                  className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-[#1B4332] focus:bg-white rounded-xl text-xs font-semibold outline-none transition-all text-slate-800"
+                  className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-[#0098db] focus:bg-white rounded-xl text-xs font-semibold outline-none transition-all text-slate-800"
                 />
               </div>
 
@@ -322,7 +322,7 @@ export const ChildrenList: React.FC<ChildrenListProps> = ({
                   required
                   value={formDob}
                   onChange={(e) => setFormDob(e.target.value)}
-                  className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-[#1B4332] focus:bg-white rounded-xl text-xs font-semibold outline-none transition-all text-slate-800"
+                  className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-[#0098db] focus:bg-white rounded-xl text-xs font-semibold outline-none transition-all text-slate-800"
                 />
               </div>
 
@@ -332,7 +332,7 @@ export const ChildrenList: React.FC<ChildrenListProps> = ({
                   id="child-form-gender"
                   value={formGender}
                   onChange={(e) => setFormGender(e.target.value as any)}
-                  className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-[#1B4332] focus:bg-white rounded-xl text-xs font-semibold outline-none transition-all text-slate-800"
+                  className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-[#0098db] focus:bg-white rounded-xl text-xs font-semibold outline-none transition-all text-slate-800"
                 >
                   <option value="Male">Male</option>
                   <option value="Female">Female</option>
@@ -349,7 +349,7 @@ export const ChildrenList: React.FC<ChildrenListProps> = ({
                   required
                   value={formAdmissionDate}
                   onChange={(e) => setFormAdmissionDate(e.target.value)}
-                  className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-[#1B4332] focus:bg-white rounded-xl text-xs font-semibold outline-none transition-all text-slate-800"
+                  className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-[#0098db] focus:bg-white rounded-xl text-xs font-semibold outline-none transition-all text-slate-800"
                 />
               </div>
 
@@ -361,7 +361,7 @@ export const ChildrenList: React.FC<ChildrenListProps> = ({
                   value={formBloodGroup}
                   onChange={(e) => setFormBloodGroup(e.target.value)}
                   placeholder="e.g. O+, A-, B+"
-                  className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-[#1B4332] focus:bg-white rounded-xl text-xs font-semibold outline-none transition-all text-slate-800"
+                  className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-[#0098db] focus:bg-white rounded-xl text-xs font-semibold outline-none transition-all text-slate-800"
                 />
               </div>
 
@@ -375,7 +375,7 @@ export const ChildrenList: React.FC<ChildrenListProps> = ({
                   value={formParentName}
                   onChange={(e) => setFormParentName(e.target.value)}
                   placeholder="Father or Mother Name"
-                  className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-[#1B4332] focus:bg-white rounded-xl text-xs font-semibold outline-none transition-all text-slate-800"
+                  className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-[#0098db] focus:bg-white rounded-xl text-xs font-semibold outline-none transition-all text-slate-800"
                 />
               </div>
 
@@ -388,7 +388,7 @@ export const ChildrenList: React.FC<ChildrenListProps> = ({
                   value={formParentPhone}
                   onChange={(e) => setFormParentPhone(e.target.value)}
                   placeholder="e.g. +91 98765 43210"
-                  className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-[#1B4332] focus:bg-white rounded-xl text-xs font-semibold outline-none transition-all text-slate-800"
+                  className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-[#0098db] focus:bg-white rounded-xl text-xs font-semibold outline-none transition-all text-slate-800"
                 />
               </div>
 
@@ -401,7 +401,7 @@ export const ChildrenList: React.FC<ChildrenListProps> = ({
                   value={formEmergencyContact}
                   onChange={(e) => setFormEmergencyContact(e.target.value)}
                   placeholder="e.g. Guard or Neighbor phone"
-                  className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-[#1B4332] focus:bg-white rounded-xl text-xs font-semibold outline-none transition-all text-slate-800"
+                  className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-[#0098db] focus:bg-white rounded-xl text-xs font-semibold outline-none transition-all text-slate-800"
                 />
               </div>
 
@@ -417,7 +417,7 @@ export const ChildrenList: React.FC<ChildrenListProps> = ({
                   onChange={(e) => setFormAllergies(e.target.value)}
                   placeholder="e.g. Severely allergic to peanuts/milk..."
                   rows={2}
-                  className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-[#1B4332] focus:bg-white rounded-xl text-xs font-semibold outline-none transition-all text-slate-800 resize-none"
+                  className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-[#0098db] focus:bg-white rounded-xl text-xs font-semibold outline-none transition-all text-slate-800 resize-none"
                 />
               </div>
 
@@ -429,7 +429,7 @@ export const ChildrenList: React.FC<ChildrenListProps> = ({
                   onChange={(e) => setFormMedicalNotes(e.target.value)}
                   placeholder="e.g. Inhaler stored in blue locker, prone to fever..."
                   rows={2}
-                  className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-[#1B4332] focus:bg-white rounded-xl text-xs font-semibold outline-none transition-all text-slate-800 resize-none"
+                  className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-[#0098db] focus:bg-white rounded-xl text-xs font-semibold outline-none transition-all text-slate-800 resize-none"
                 />
               </div>
             </div>
@@ -449,7 +449,7 @@ export const ChildrenList: React.FC<ChildrenListProps> = ({
               <button
                 id="save-child-btn"
                 type="submit"
-                className="px-6 py-3 bg-[#1B4332] hover:bg-[#3d7edc] text-white rounded-xl text-xs font-bold shadow-md shadow-blue-100 transition-all cursor-pointer"
+                className="px-6 py-3 bg-[#0098db] hover:bg-[#3d7edc] text-white rounded-xl text-xs font-bold shadow-md shadow-blue-100 transition-all cursor-pointer"
               >
                 {editingChild ? 'Update Child Profile' : 'Complete Admission'}
               </button>
@@ -489,7 +489,7 @@ export const ChildrenList: React.FC<ChildrenListProps> = ({
                       <p className="text-[10px] text-slate-400 font-bold uppercase tracking-wider mt-1">{child.gender} • DOB: {child.dob}</p>
                       
                       <div className="flex flex-wrap gap-1.5 mt-2.5">
-                        <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[9px] font-bold bg-amber-50 text-[#1B4332] border border-blue-100/30">
+                        <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[9px] font-bold bg-amber-50 text-[#0098db] border border-blue-100/30">
                           <Droplet className="w-2.5 h-2.5 shrink-0" />
                           Blood: {child.bloodGroup}
                         </span>
@@ -514,7 +514,7 @@ export const ChildrenList: React.FC<ChildrenListProps> = ({
                       <button
                         id={`view-profile-btn-${child.id}`}
                         onClick={() => setSelectedChild(child)}
-                        className="p-2 bg-slate-50 hover:bg-amber-50 text-slate-500 hover:text-[#1B4332] rounded-xl border border-slate-200/50 transition-colors cursor-pointer"
+                        className="p-2 bg-slate-50 hover:bg-amber-50 text-slate-500 hover:text-[#0098db] rounded-xl border border-slate-200/50 transition-colors cursor-pointer"
                         title="View Full Profile"
                       >
                         <Info className="w-3.5 h-3.5" />
@@ -594,21 +594,21 @@ export const ChildrenList: React.FC<ChildrenListProps> = ({
                     <div>
                       <p className="text-[9px] text-slate-400 font-bold uppercase tracking-wider">Date of Birth</p>
                       <p className="text-xs font-bold text-slate-800 flex items-center gap-1.5 mt-0.5">
-                        <Calendar className="w-3.5 h-3.5 text-[#1B4332]" />
+                        <Calendar className="w-3.5 h-3.5 text-[#0098db]" />
                         {selectedChild.dob}
                       </p>
                     </div>
                     <div>
                       <p className="text-[9px] text-slate-400 font-bold uppercase tracking-wider">Admission Date</p>
                       <p className="text-xs font-bold text-slate-800 flex items-center gap-1.5 mt-0.5">
-                        <FileText className="w-3.5 h-3.5 text-[#1B4332]" />
+                        <FileText className="w-3.5 h-3.5 text-[#0098db]" />
                         {selectedChild.admissionDate}
                       </p>
                     </div>
                     <div>
                       <p className="text-[9px] text-slate-400 font-bold uppercase tracking-wider">Gender</p>
                       <p className="text-xs font-bold text-slate-800 flex items-center gap-1.5 mt-0.5">
-                        <User className="w-3.5 h-3.5 text-[#1B4332]" />
+                        <User className="w-3.5 h-3.5 text-[#0098db]" />
                         {selectedChild.gender}
                       </p>
                     </div>
@@ -631,14 +631,14 @@ export const ChildrenList: React.FC<ChildrenListProps> = ({
                       </div>
                       <div className="flex justify-between p-2.5 bg-slate-50/50 rounded-xl">
                         <span className="text-slate-500">Guardian Mobile:</span>
-                        <a href={`tel:${selectedChild.parentPhone}`} className="font-bold text-[#1B4332] hover:underline flex items-center gap-1">
+                        <a href={`tel:${selectedChild.parentPhone}`} className="font-bold text-[#0098db] hover:underline flex items-center gap-1">
                           <Phone className="w-3 h-3" />
                           {selectedChild.parentPhone}
                         </a>
                       </div>
                       <div className="flex justify-between p-2.5 bg-slate-50/50 rounded-xl">
                         <span className="text-slate-500">Emergency Alternate:</span>
-                        <a href={`tel:${selectedChild.emergencyContact}`} className="font-bold text-[#1B4332] hover:underline flex items-center gap-1">
+                        <a href={`tel:${selectedChild.emergencyContact}`} className="font-bold text-[#0098db] hover:underline flex items-center gap-1">
                           <Phone className="w-3 h-3" />
                           {selectedChild.emergencyContact}
                         </a>
@@ -686,7 +686,7 @@ export const ChildrenList: React.FC<ChildrenListProps> = ({
                   <button
                     id="close-profile-modal-btn"
                     onClick={() => setSelectedChild(null)}
-                    className="px-4 py-2 bg-[#1B4332] hover:bg-[#3273d4] text-white font-bold text-xs rounded-xl transition-all cursor-pointer"
+                    className="px-4 py-2 bg-[#0098db] hover:bg-[#3273d4] text-white font-bold text-xs rounded-xl transition-all cursor-pointer"
                   >
                     Close
                   </button>

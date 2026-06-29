@@ -166,7 +166,7 @@ export const DailyUpdates: React.FC = () => {
       {/* HEADER BAR */}
       <div>
         <h2 className="text-xl font-black text-slate-900 tracking-tight">Teacher's Daily Activities Logger</h2>
-        <p className="text-xs text-[#1B4332] font-semibold uppercase tracking-wider">Module 3: Daily Updates</p>
+        <p className="text-xs text-[#0098db] font-semibold uppercase tracking-wider">Module 3: Daily Updates</p>
         <p className="text-xs text-slate-400 font-medium mt-1">Record food consumption, sleep nap durations, child mood and teacher notes for present children.</p>
       </div>
 
@@ -180,12 +180,12 @@ export const DailyUpdates: React.FC = () => {
             placeholder="Search active present kids..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full pl-12 pr-4 py-3.5 bg-white border border-slate-200/80 focus:border-[#1B4332] rounded-2xl text-xs font-semibold outline-none transition-all text-slate-800"
+            className="w-full pl-12 pr-4 py-3.5 bg-white border border-slate-200/80 focus:border-[#0098db] rounded-2xl text-xs font-semibold outline-none transition-all text-slate-800"
           />
         </div>
 
         <div className="p-4 bg-amber-50/50 rounded-2xl border border-blue-100/40 flex gap-3 text-xs text-slate-600">
-          <CalendarCheck className="w-5 h-5 text-[#1B4332] shrink-0 mt-0.5" />
+          <CalendarCheck className="w-5 h-5 text-[#0098db] shrink-0 mt-0.5" />
           <div>
             <p className="font-bold text-slate-800">Attendance sync enabled</p>
             <p className="mt-0.5">Only children marked as <span className="font-semibold text-emerald-700">Present</span> or <span className="font-semibold text-indigo-700">Picked Up</span> in today's attendance roster are displayed here for logs.</p>
@@ -278,7 +278,7 @@ export const DailyUpdates: React.FC = () => {
                     className={`w-full py-2.5 rounded-xl text-xs font-bold transition-all cursor-pointer flex justify-center items-center gap-1.5 border ${
                       isLogged 
                         ? 'bg-slate-50 hover:bg-slate-100/80 border-slate-200 text-slate-700' 
-                        : 'bg-[#1B4332] hover:bg-[#3273d4] border-[#1B4332] text-white shadow-sm shadow-blue-100'
+                        : 'bg-[#0098db] hover:bg-[#3273d4] border-[#0098db] text-white shadow-sm shadow-blue-100'
                     }`}
                   >
                     <Plus className="w-4 h-4" />
@@ -333,7 +333,7 @@ export const DailyUpdates: React.FC = () => {
                   {/* MEAL INTAKE LOGS */}
                   <div className="space-y-4">
                     <h4 className="text-xs font-extrabold uppercase tracking-wider text-slate-400 flex items-center gap-1.5 border-b border-slate-100 pb-1.5">
-                      <Utensils className="w-4 h-4 text-[#1B4332]" />
+                      <Utensils className="w-4 h-4 text-[#0098db]" />
                       Meals Log
                     </h4>
 
@@ -351,7 +351,7 @@ export const DailyUpdates: React.FC = () => {
                               onClick={() => setBreakfast(opt)}
                               className={`px-3 py-1.5 rounded-xl text-[10px] font-bold transition-all border ${
                                 breakfast === opt 
-                                  ? 'bg-[#1B4332] text-white border-[#1B4332] shadow-sm' 
+                                  ? 'bg-[#0098db] text-white border-[#0098db] shadow-sm' 
                                   : 'bg-white text-slate-500 border-slate-200 hover:bg-slate-100'
                               }`}
                             >
@@ -373,7 +373,7 @@ export const DailyUpdates: React.FC = () => {
                               onClick={() => setLunch(opt)}
                               className={`px-3 py-1.5 rounded-xl text-[10px] font-bold transition-all border ${
                                 lunch === opt 
-                                  ? 'bg-[#1B4332] text-white border-[#1B4332] shadow-sm' 
+                                  ? 'bg-[#0098db] text-white border-[#0098db] shadow-sm' 
                                   : 'bg-white text-slate-500 border-slate-200 hover:bg-slate-100'
                               }`}
                             >
@@ -395,7 +395,7 @@ export const DailyUpdates: React.FC = () => {
                               onClick={() => setSnacks(opt)}
                               className={`px-3 py-1.5 rounded-xl text-[10px] font-bold transition-all border ${
                                 snacks === opt 
-                                  ? 'bg-[#1B4332] text-white border-[#1B4332] shadow-sm' 
+                                  ? 'bg-[#0098db] text-white border-[#0098db] shadow-sm' 
                                   : 'bg-white text-slate-500 border-slate-200 hover:bg-slate-100'
                               }`}
                             >
@@ -423,7 +423,7 @@ export const DailyUpdates: React.FC = () => {
                           value={napStart}
                           onChange={(e) => setNapStart(e.target.value)}
                           placeholder="e.g. 01:00 PM"
-                          className="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 focus:border-[#1B4332] rounded-xl text-xs font-semibold"
+                          className="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 focus:border-[#0098db] rounded-xl text-xs font-semibold"
                         />
                       </div>
                       <div>
@@ -434,7 +434,7 @@ export const DailyUpdates: React.FC = () => {
                           value={napEnd}
                           onChange={(e) => setNapEnd(e.target.value)}
                           placeholder="e.g. 02:15 PM"
-                          className="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 focus:border-[#1B4332] rounded-xl text-xs font-semibold"
+                          className="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 focus:border-[#0098db] rounded-xl text-xs font-semibold"
                         />
                       </div>
                     </div>
@@ -473,7 +473,7 @@ export const DailyUpdates: React.FC = () => {
                   {/* TEACHER NOTES */}
                   <div className="space-y-4">
                     <h4 className="text-xs font-extrabold uppercase tracking-wider text-slate-400 flex items-center gap-1.5 border-b border-slate-100 pb-1.5">
-                      <FileText className="w-4 h-4 text-[#1B4332]" />
+                      <FileText className="w-4 h-4 text-[#0098db]" />
                       Coordinating Notes
                     </h4>
                     
@@ -483,7 +483,7 @@ export const DailyUpdates: React.FC = () => {
                       onChange={(e) => setTeacherNotes(e.target.value)}
                       placeholder="e.g. Loved finger painting, shared snacks with Riya, slept well..."
                       rows={3}
-                      className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-[#1B4332] focus:bg-white rounded-2xl text-xs font-medium outline-none transition-all resize-none"
+                      className="w-full px-4 py-3 bg-slate-50 border border-slate-200 focus:border-[#0098db] focus:bg-white rounded-2xl text-xs font-medium outline-none transition-all resize-none"
                     />
                   </div>
 
@@ -499,7 +499,7 @@ export const DailyUpdates: React.FC = () => {
                     <button
                       id="submit-logs-btn"
                       type="submit"
-                      className="flex-1 py-3 bg-[#1B4332] hover:bg-[#3273d4] text-white rounded-xl text-xs font-bold shadow-md shadow-blue-100 transition-all cursor-pointer text-center"
+                      className="flex-1 py-3 bg-[#0098db] hover:bg-[#3273d4] text-white rounded-xl text-xs font-bold shadow-md shadow-blue-100 transition-all cursor-pointer text-center"
                     >
                       Save Daily Log
                     </button>

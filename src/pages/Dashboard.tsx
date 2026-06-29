@@ -197,7 +197,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
             <button
               id="dash-add-child-btn"
               onClick={onAddChildClick}
-              className="px-4 py-2.5 bg-[#1B4332] hover:bg-[#3d7edc] text-white rounded-xl text-xs font-bold flex items-center gap-1.5 shadow-md shadow-blue-100 hover:shadow-green-900/20 transition-all cursor-pointer"
+              className="px-4 py-2.5 bg-[#0098db] hover:bg-[#3d7edc] text-white rounded-xl text-xs font-bold flex items-center gap-1.5 shadow-md shadow-blue-100 hover:shadow-green-900/20 transition-all cursor-pointer"
             >
               <Plus className="w-4 h-4" />
               <span>Add Child</span>
@@ -223,7 +223,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
           className="p-5 bg-white rounded-3xl border border-slate-200/60 shadow-sm flex items-center gap-4 cursor-pointer"
           onClick={() => setActiveTab('children')}
         >
-          <div className="w-10 h-10 bg-amber-50 rounded-2xl flex items-center justify-center text-[#1B4332] shrink-0">
+          <div className="w-10 h-10 bg-amber-50 rounded-2xl flex items-center justify-center text-[#0098db] shrink-0">
             <Users className="w-5 h-5" />
           </div>
           <div className="min-w-0">
@@ -338,7 +338,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
               </div>
               <button 
                 onClick={() => setActiveTab('fees')}
-                className="text-xs font-bold text-[#1B4332] hover:underline cursor-pointer bg-transparent border-none"
+                className="text-xs font-bold text-[#0098db] hover:underline cursor-pointer bg-transparent border-none"
               >
                 {isParent ? 'Pay' : 'Details'}
               </button>
@@ -438,7 +438,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
               </div>
               <button 
                 onClick={() => setActiveTab('events')}
-                className="text-xs font-bold text-[#1B4332] hover:underline cursor-pointer bg-transparent border-none"
+                className="text-xs font-bold text-[#0098db] hover:underline cursor-pointer bg-transparent border-none"
               >
                 Calendar
               </button>
@@ -527,7 +527,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
               </div>
               <button 
                 onClick={() => setActiveTab('incidents')}
-                className="text-xs font-bold text-[#1B4332] hover:underline cursor-pointer bg-transparent border-none"
+                className="text-xs font-bold text-[#0098db] hover:underline cursor-pointer bg-transparent border-none"
               >
                 {isParent && pendingAcksCount > 0 ? `Sign (${pendingAcksCount})` : 'All'}
               </button>
@@ -600,7 +600,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
             <button
               id="view-all-activities-btn"
               onClick={() => setActiveTab('attendance')}
-              className="text-[#1B4332] hover:text-[#3273d4] hover:underline text-xs font-bold cursor-pointer flex items-center gap-1"
+              className="text-[#0098db] hover:text-[#3273d4] hover:underline text-xs font-bold cursor-pointer flex items-center gap-1"
             >
               <span>Manage Attendance</span>
               <ChevronRight className="w-4 h-4" />
@@ -618,7 +618,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
                 {activities.slice(0, 5).map((act) => (
                   <div key={act.id} className="relative">
                     {/* Timestamp bullet circle */}
-                    <span className="absolute -left-[27px] top-1 w-3 h-3 rounded-full bg-[#1B4332] ring-4 ring-white" />
+                    <span className="absolute -left-[27px] top-1 w-3 h-3 rounded-full bg-[#0098db] ring-4 ring-white" />
                     
                     <div className="flex items-start gap-3.5">
                       {act.childPhoto ? (
@@ -629,7 +629,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
                           referrerPolicy="no-referrer"
                         />
                       ) : (
-                        <div className="w-10 h-10 bg-green-100 text-[#1B4332] rounded-xl flex items-center justify-center font-bold text-xs shrink-0">
+                        <div className="w-10 h-10 bg-green-100 text-[#0098db] rounded-xl flex items-center justify-center font-bold text-xs shrink-0">
                           {act.childName.charAt(0)}
                         </div>
                       )}
@@ -672,7 +672,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
             <button
               id="view-all-notices-btn"
               onClick={() => setActiveTab('notifications')}
-              className="text-[#1B4332] hover:text-[#3273d4] hover:underline text-xs font-bold cursor-pointer"
+              className="text-[#0098db] hover:text-[#3273d4] hover:underline text-xs font-bold cursor-pointer"
             >
               View All
             </button>
@@ -723,7 +723,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
       {/* QUICK WORKFLOW ACCESS FOR STAFF & ADMIN */}
       <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-3xl border border-blue-100/60 p-6">
         <h3 className="font-bold text-base text-slate-900 mb-4 flex items-center gap-2">
-          <Calendar className="w-5 h-5 text-[#1B4332]" />
+          <Calendar className="w-5 h-5 text-[#0098db]" />
           Recommended Operational Workflows
         </h3>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -760,7 +760,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
             onClick={() => setActiveTab('children')}
             className="p-4 bg-white hover:bg-slate-50 border border-slate-200/50 rounded-2xl cursor-pointer transition-all flex items-start gap-3 shadow-sm shadow-slate-100/50"
           >
-            <div className="w-10 h-10 bg-amber-50 rounded-xl flex items-center justify-center text-[#1B4332] shrink-0">
+            <div className="w-10 h-10 bg-amber-50 rounded-xl flex items-center justify-center text-[#0098db] shrink-0">
               <Users className="w-5 h-5" />
             </div>
             <div>

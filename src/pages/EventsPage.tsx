@@ -167,11 +167,11 @@ export const EventsPage: React.FC = () => {
       <div className="flex items-center justify-between gap-3">
         <div>
           <h2 className="text-xl font-black text-slate-900 tracking-tight">Events &amp; Programs</h2>
-          <p className="text-xs text-[#1B4332] font-semibold uppercase tracking-wider">Schedule · RSVP · Attendance</p>
+          <p className="text-xs text-[#0098db] font-semibold uppercase tracking-wider">Schedule · RSVP · Attendance</p>
         </div>
         {(isAdmin || isStaff) && (
           <button onClick={() => setShowModal(true)}
-            className="flex items-center gap-2 bg-[#1B4332] hover:bg-green-900 text-white text-xs font-bold px-4 py-2.5 rounded-2xl shadow-sm shadow-green-900/20 transition-colors">
+            className="flex items-center gap-2 bg-[#0098db] hover:bg-green-900 text-white text-xs font-bold px-4 py-2.5 rounded-2xl shadow-sm shadow-green-900/20 transition-colors">
             <Plus className="w-4 h-4" /> Create Event
           </button>
         )}
@@ -198,7 +198,7 @@ export const EventsPage: React.FC = () => {
       <div className="flex gap-1.5 flex-wrap">
         {CLASS_TAGS.map(t => (
           <button key={t} onClick={() => setFilterTag(t)}
-            className={`px-3 py-1.5 rounded-xl text-[10px] font-bold transition-colors ${filterTag === t ? 'bg-[#1B4332] text-white' : 'bg-white border border-slate-200 text-slate-500 hover:text-slate-700'}`}>
+            className={`px-3 py-1.5 rounded-xl text-[10px] font-bold transition-colors ${filterTag === t ? 'bg-[#0098db] text-white' : 'bg-white border border-slate-200 text-slate-500 hover:text-slate-700'}`}>
             {t}
           </button>
         ))}
@@ -296,47 +296,47 @@ export const EventsPage: React.FC = () => {
                 <div>
                   <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider block mb-1.5">Event title</label>
                   <input value={form.title} onChange={e => setForm(f => ({ ...f, title: e.target.value }))} required placeholder="e.g. Annual Sports Day"
-                    className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-medium outline-none focus:border-[#1B4332]" />
+                    className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-medium outline-none focus:border-[#0098db]" />
                 </div>
                 <div>
                   <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider block mb-1.5">Description</label>
                   <textarea value={form.description} onChange={e => setForm(f => ({ ...f, description: e.target.value }))} rows={2} style={{ resize: 'none' }} placeholder="Tell parents what to expect..."
-                    className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-medium outline-none focus:border-[#1B4332]" />
+                    className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-medium outline-none focus:border-[#0098db]" />
                 </div>
                 <div className="grid grid-cols-2 gap-3">
                   <div>
                     <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider block mb-1.5">Date</label>
                     <input type="date" value={form.date} onChange={e => setForm(f => ({ ...f, date: e.target.value }))} required
-                      className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-medium outline-none focus:border-[#1B4332]" />
+                      className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-medium outline-none focus:border-[#0098db]" />
                   </div>
                   <div>
                     <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider block mb-1.5">Time</label>
                     <input value={form.time} onChange={e => setForm(f => ({ ...f, time: e.target.value }))} placeholder="09:00 AM"
-                      className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-medium outline-none focus:border-[#1B4332]" />
+                      className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-medium outline-none focus:border-[#0098db]" />
                   </div>
                 </div>
                 <div className="grid grid-cols-2 gap-3">
                   <div>
                     <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider block mb-1.5">Venue</label>
                     <input value={form.venue} onChange={e => setForm(f => ({ ...f, venue: e.target.value }))} placeholder="e.g. Main Hall"
-                      className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-medium outline-none focus:border-[#1B4332]" />
+                      className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-medium outline-none focus:border-[#0098db]" />
                   </div>
                   <div>
                     <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider block mb-1.5">Max seats</label>
                     <input type="number" value={form.maxSeats} onChange={e => setForm(f => ({ ...f, maxSeats: e.target.value }))} placeholder="Leave blank = unlimited"
-                      className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-medium outline-none focus:border-[#1B4332]" />
+                      className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-medium outline-none focus:border-[#0098db]" />
                   </div>
                 </div>
                 <div className="grid grid-cols-2 gap-3">
                   <div>
                     <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider block mb-1.5">RSVP deadline</label>
                     <input type="date" value={form.rsvpDeadline} onChange={e => setForm(f => ({ ...f, rsvpDeadline: e.target.value }))} required
-                      className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-medium outline-none focus:border-[#1B4332]" />
+                      className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-medium outline-none focus:border-[#0098db]" />
                   </div>
                   <div>
                     <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider block mb-1.5">Target class</label>
                     <select value={form.targetClass} onChange={e => setForm(f => ({ ...f, targetClass: e.target.value }))}
-                      className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-medium outline-none focus:border-[#1B4332]">
+                      className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-medium outline-none focus:border-[#0098db]">
                       {CLASS_TAGS.map(t => <option key={t} value={t}>{t}</option>)}
                     </select>
                   </div>
@@ -344,7 +344,7 @@ export const EventsPage: React.FC = () => {
                 <div className="flex gap-2 pt-1">
                   <button type="button" onClick={() => setShowModal(false)} className="flex-1 py-2.5 rounded-2xl border border-slate-200 text-sm font-bold text-slate-600 hover:bg-slate-50 transition-colors">Cancel</button>
                   <button type="submit" disabled={saving}
-                    className="flex-1 py-2.5 rounded-2xl bg-[#1B4332] hover:bg-green-900 text-white text-sm font-bold transition-colors disabled:opacity-60 flex items-center justify-center gap-2">
+                    className="flex-1 py-2.5 rounded-2xl bg-[#0098db] hover:bg-green-900 text-white text-sm font-bold transition-colors disabled:opacity-60 flex items-center justify-center gap-2">
                     {saving ? <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" /> : <><Check className="w-4 h-4" /> Create event</>}
                   </button>
                 </div>

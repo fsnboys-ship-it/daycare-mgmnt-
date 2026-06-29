@@ -25,7 +25,7 @@ export const Login: React.FC = () => {
     <div className="min-h-screen flex" style={{ background: '#F7F3EE' }}>
 
       {/* Left — brand panel */}
-      <div className="hidden lg:flex lg:w-[46%] flex-col relative overflow-hidden" style={{ background: '#1B4332' }}>
+      <div className="hidden lg:flex lg:w-[46%] flex-col relative overflow-hidden" style={{ background: '#0098db' }}>
 
         {/* Decorative circles */}
         <div className="absolute -top-24 -left-24 w-96 h-96 rounded-full opacity-10" style={{ background: '#F59E0B' }} />
@@ -102,7 +102,7 @@ export const Login: React.FC = () => {
 
           {/* Mobile logo */}
           <div className="flex lg:hidden items-center gap-2.5 mb-8 justify-center">
-            <div className="w-9 h-9 rounded-2xl overflow-hidden flex items-center justify-center shrink-0" style={{ background: '#1B4332' }}>
+            <div className="w-9 h-9 rounded-2xl overflow-hidden flex items-center justify-center shrink-0" style={{ background: '#0098db' }}>
               {centre.logoUrl
                 ? <img src={centre.logoUrl} alt={centre.name} className="w-full h-full object-contain p-0.5" />
                 : <Heart className="w-4 h-4 text-amber-400 fill-amber-400" />
@@ -112,7 +112,7 @@ export const Login: React.FC = () => {
           </div>
 
           <div className="mb-8">
-            <h3 className="text-2xl font-black tracking-tight" style={{ color: '#1B4332' }}>Welcome back</h3>
+            <h3 className="text-2xl font-black tracking-tight" style={{ color: '#0098db' }}>Welcome back</h3>
             <p className="text-sm text-slate-400 mt-1 font-medium">Sign in to {centre.name}</p>
           </div>
 
@@ -126,7 +126,7 @@ export const Login: React.FC = () => {
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label className="block text-[10px] font-black uppercase tracking-widest mb-2" style={{ color: '#1B4332' }}>
+              <label className="block text-[10px] font-black uppercase tracking-widest mb-2" style={{ color: '#0098db' }}>
                 Email address
               </label>
               <div className="relative">
@@ -140,7 +140,7 @@ export const Login: React.FC = () => {
             </div>
 
             <div>
-              <label className="block text-[10px] font-black uppercase tracking-widest mb-2" style={{ color: '#1B4332' }}>
+              <label className="block text-[10px] font-black uppercase tracking-widest mb-2" style={{ color: '#0098db' }}>
                 Password
               </label>
               <div className="relative">
@@ -156,7 +156,7 @@ export const Login: React.FC = () => {
             <button
               type="submit" disabled={loading}
               className="w-full py-3.5 rounded-2xl text-sm font-black text-white shadow-lg transition-all hover:opacity-90 active:scale-[0.98] disabled:opacity-60 mt-2"
-              style={{ background: '#1B4332', boxShadow: '0 4px 24px rgba(27,67,50,0.25)' }}
+              style={{ background: '#0098db', boxShadow: '0 4px 24px rgba(0, 152, 219,0.25)' }}
             >
               {loading ? (
                 <span className="flex items-center justify-center gap-2">

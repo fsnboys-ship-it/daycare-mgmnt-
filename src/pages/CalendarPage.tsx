@@ -99,10 +99,10 @@ export const CalendarPage: React.FC = () => {
       <div className="flex items-center justify-between gap-3">
         <div>
           <h2 className="text-xl font-black text-slate-900 tracking-tight">Calendar</h2>
-          <p className="text-xs text-[#1B4332] font-semibold uppercase tracking-wider">Holidays · Events · Fee dues · Birthdays</p>
+          <p className="text-xs text-[#0098db] font-semibold uppercase tracking-wider">Holidays · Events · Fee dues · Birthdays</p>
         </div>
         <button onClick={() => { setForm(f => ({ ...f, date: todayStr })); setShowAddModal(true); }}
-          className="flex items-center gap-2 bg-[#1B4332] hover:bg-green-900 text-white text-xs font-bold px-4 py-2.5 rounded-2xl shadow-sm shadow-green-900/20 transition-colors">
+          className="flex items-center gap-2 bg-[#0098db] hover:bg-green-900 text-white text-xs font-bold px-4 py-2.5 rounded-2xl shadow-sm shadow-green-900/20 transition-colors">
           <Plus className="w-4 h-4" /> Add entry
         </button>
       </div>
@@ -144,7 +144,7 @@ export const CalendarPage: React.FC = () => {
 
               return (
                 <button key={idx} onClick={() => setSelectedDate(isSelected ? null : dateStr)}
-                  className={`aspect-square flex flex-col items-center justify-start p-1 rounded-xl transition-colors relative ${isSelected ? 'bg-[#1B4332] text-white' : isToday ? 'bg-amber-50 text-[#1B4332]' : 'hover:bg-slate-50 text-slate-700'}`}>
+                  className={`aspect-square flex flex-col items-center justify-start p-1 rounded-xl transition-colors relative ${isSelected ? 'bg-[#0098db] text-white' : isToday ? 'bg-amber-50 text-[#0098db]' : 'hover:bg-slate-50 text-slate-700'}`}>
                   <span className={`text-xs font-bold ${isToday && !isSelected ? 'font-black' : ''}`}>{day}</span>
                   {dayEvents.length > 0 && (
                     <div className="flex gap-0.5 flex-wrap justify-center mt-0.5">
@@ -183,7 +183,7 @@ export const CalendarPage: React.FC = () => {
                 );
               })}
               <button onClick={() => { setForm(f => ({ ...f, date: selectedDate })); setShowAddModal(true); }}
-                className="w-full mt-2 py-1.5 rounded-xl border border-dashed border-slate-300 text-xs text-slate-400 hover:border-[#1B4332] hover:text-[#1B4332] transition-colors flex items-center justify-center gap-1">
+                className="w-full mt-2 py-1.5 rounded-xl border border-dashed border-slate-300 text-xs text-slate-400 hover:border-[#0098db] hover:text-[#0098db] transition-colors flex items-center justify-center gap-1">
                 <Plus className="w-3 h-3" /> Add to this date
               </button>
             </motion.div>
@@ -239,18 +239,18 @@ export const CalendarPage: React.FC = () => {
                 <div>
                   <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider block mb-1.5">Title</label>
                   <input value={form.title} onChange={e => setForm(f => ({ ...f, title: e.target.value }))} required placeholder="e.g. Onam Holiday"
-                    className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-medium outline-none focus:border-[#1B4332]" />
+                    className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-medium outline-none focus:border-[#0098db]" />
                 </div>
                 <div className="grid grid-cols-2 gap-3">
                   <div>
                     <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider block mb-1.5">Date</label>
                     <input type="date" value={form.date} onChange={e => setForm(f => ({ ...f, date: e.target.value }))} required
-                      className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-medium outline-none focus:border-[#1B4332]" />
+                      className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-medium outline-none focus:border-[#0098db]" />
                   </div>
                   <div>
                     <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider block mb-1.5">Type</label>
                     <select value={form.type} onChange={e => setForm(f => ({ ...f, type: e.target.value as CalendarEventType }))}
-                      className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-medium outline-none focus:border-[#1B4332]">
+                      className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-medium outline-none focus:border-[#0098db]">
                       {(Object.keys(TYPE_CONFIG) as CalendarEventType[]).map(t => <option key={t} value={t}>{TYPE_CONFIG[t].label}</option>)}
                     </select>
                   </div>
@@ -258,12 +258,12 @@ export const CalendarPage: React.FC = () => {
                 <div>
                   <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider block mb-1.5">Note (optional)</label>
                   <input value={form.description} onChange={e => setForm(f => ({ ...f, description: e.target.value }))} placeholder="Additional detail..."
-                    className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-medium outline-none focus:border-[#1B4332]" />
+                    className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-medium outline-none focus:border-[#0098db]" />
                 </div>
                 <div className="flex gap-2 pt-1">
                   <button type="button" onClick={() => setShowAddModal(false)} className="flex-1 py-2.5 rounded-2xl border border-slate-200 text-sm font-bold text-slate-600 hover:bg-slate-50 transition-colors">Cancel</button>
                   <button type="submit" disabled={saving}
-                    className="flex-1 py-2.5 rounded-2xl bg-[#1B4332] hover:bg-green-900 text-white text-sm font-bold transition-colors disabled:opacity-60 flex items-center justify-center gap-2">
+                    className="flex-1 py-2.5 rounded-2xl bg-[#0098db] hover:bg-green-900 text-white text-sm font-bold transition-colors disabled:opacity-60 flex items-center justify-center gap-2">
                     {saving ? <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" /> : <><Check className="w-4 h-4" /> Add entry</>}
                   </button>
                 </div>

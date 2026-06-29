@@ -264,7 +264,7 @@ export const SettingsPage: React.FC = () => {
 
               <button type="submit" disabled={brandSaving}
                 className="flex items-center justify-center gap-2 px-5 py-2.5 rounded-2xl text-xs font-black text-white transition-colors disabled:opacity-60"
-                style={{ background: '#1B4332' }}>
+                style={{ background: '#0098db' }}>
                 {brandSaving
                   ? <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                   : <><Check className="w-4 h-4" /> Save branding</>
@@ -281,7 +281,7 @@ export const SettingsPage: React.FC = () => {
           <div className="bg-white rounded-3xl border border-slate-200/60 p-5 shadow-sm">
             <div className="flex items-center gap-3 mb-4 pb-4 border-b border-slate-100">
               <div className="w-12 h-12 rounded-2xl flex items-center justify-center font-black text-lg text-white shrink-0"
-                style={{ background: '#1B4332' }}>
+                style={{ background: '#0098db' }}>
                 {currentUser?.name.charAt(0)}
               </div>
               <div className="min-w-0">

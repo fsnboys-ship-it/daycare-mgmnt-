@@ -205,7 +205,7 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children, acti
     <div className="min-h-screen flex" style={{ background: '#F7F3EE' }}>
 
       {/* Desktop sidebar */}
-      <aside className="hidden md:flex flex-col w-60 shrink-0 sticky top-0 h-screen" style={{ background: '#1B4332' }}>
+      <aside className="hidden md:flex flex-col w-60 shrink-0 sticky top-0 h-screen" style={{ background: '#0098db' }}>
         <SidebarContent />
       </aside>
 
@@ -219,7 +219,7 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children, acti
             <motion.aside initial={{ x: '-100%' }} animate={{ x: 0 }} exit={{ x: '-100%' }}
               transition={{ type: 'tween', duration: 0.22 }}
               className="fixed inset-y-0 left-0 w-64 z-50 flex flex-col md:hidden shadow-2xl"
-              style={{ background: '#1B4332' }}>
+              style={{ background: '#0098db' }}>
               <button onClick={() => setSidebarOpen(false)}
                 className="absolute top-4 right-4 w-7 h-7 rounded-lg bg-green-800/60 flex items-center justify-center text-green-300 hover:text-white">
                 <X className="w-4 h-4" />
@@ -260,7 +260,7 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children, acti
           <div className="flex items-center gap-2">
             {/* Mode badge */}
             <span className="hidden md:inline-flex items-center gap-1.5 text-[10px] font-bold px-2.5 py-1 rounded-full border"
-              style={{ background: '#F0FDF4', color: '#15803D', borderColor: '#BBF7D0' }}>
+              style={{ background: '#F0F9FF', color: '#0284C7', borderColor: '#BAE6FD' }}>
               <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
               {dbService.isRealFirebase() ? 'Firebase Live' : 'Offline Mode'}
             </span>
@@ -328,7 +328,7 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children, acti
             {/* Avatar */}
             <div className="flex items-center gap-2 pl-2 border-l border-amber-100">
               <div className="w-8 h-8 rounded-xl flex items-center justify-center font-black text-sm text-white shrink-0"
-                style={{ background: '#1B4332' }}>
+                style={{ background: '#0098db' }}>
                 {userInitial}
               </div>
               <div className="hidden lg:block">
@@ -373,7 +373,7 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children, acti
             <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
               <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }}
                 className="w-full max-w-md bg-white rounded-3xl shadow-2xl overflow-hidden">
-                <div className="p-5 flex items-center gap-3" style={{ background: '#1B4332' }}>
+                <div className="p-5 flex items-center gap-3" style={{ background: '#0098db' }}>
                   <div className="w-9 h-9 bg-amber-400 rounded-xl flex items-center justify-center shrink-0">
                     <Megaphone className="w-5 h-5 text-green-900" />
                   </div>
@@ -403,7 +403,7 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children, acti
                 <div className="px-5 py-4 border-t border-amber-100 flex justify-end">
                   <button onClick={() => setShowPopup(false)}
                     className="px-5 py-2 rounded-xl text-xs font-black text-white transition-colors"
-                    style={{ background: '#1B4332' }}>
+                    style={{ background: '#0098db' }}>
                     Enter Portal
                   </button>
                 </div>

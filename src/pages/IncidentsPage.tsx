@@ -119,11 +119,11 @@ export const IncidentsPage: React.FC = () => {
       <div className="flex items-center justify-between gap-3">
         <div>
           <h2 className="text-xl font-black text-slate-900 tracking-tight">Incident Reports</h2>
-          <p className="text-xs text-[#1B4332] font-semibold uppercase tracking-wider">Safety log · Parent acknowledgment</p>
+          <p className="text-xs text-[#0098db] font-semibold uppercase tracking-wider">Safety log · Parent acknowledgment</p>
         </div>
         {(isAdmin || isStaff) && (
           <button onClick={() => setShowModal(true)}
-            className="flex items-center gap-2 bg-[#1B4332] hover:bg-green-900 text-white text-xs font-bold px-4 py-2.5 rounded-2xl shadow-sm shadow-green-900/20 transition-colors">
+            className="flex items-center gap-2 bg-[#0098db] hover:bg-green-900 text-white text-xs font-bold px-4 py-2.5 rounded-2xl shadow-sm shadow-green-900/20 transition-colors">
             <Plus className="w-4 h-4" /> Log Incident
           </button>
         )}
@@ -152,15 +152,15 @@ export const IncidentsPage: React.FC = () => {
         <div className="relative flex-1">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-slate-400" />
           <input value={search} onChange={e => setSearch(e.target.value)} placeholder="Search by child name or description..."
-            className="w-full pl-9 pr-4 py-2.5 bg-white border border-slate-200 rounded-2xl text-xs font-medium outline-none focus:border-[#1B4332] focus:ring-2 focus:ring-green-50" />
+            className="w-full pl-9 pr-4 py-2.5 bg-white border border-slate-200 rounded-2xl text-xs font-medium outline-none focus:border-[#0098db] focus:ring-2 focus:ring-green-50" />
         </div>
         <select value={filterType} onChange={e => setFilterType(e.target.value)}
-          className="px-3 py-2.5 bg-white border border-slate-200 rounded-2xl text-xs font-medium outline-none focus:border-[#1B4332]">
+          className="px-3 py-2.5 bg-white border border-slate-200 rounded-2xl text-xs font-medium outline-none focus:border-[#0098db]">
           <option value="All">All types</option>
           {INCIDENT_TYPES.map(t => <option key={t} value={t}>{t}</option>)}
         </select>
         <select value={filterStatus} onChange={e => setFilterStatus(e.target.value)}
-          className="px-3 py-2.5 bg-white border border-slate-200 rounded-2xl text-xs font-medium outline-none focus:border-[#1B4332]">
+          className="px-3 py-2.5 bg-white border border-slate-200 rounded-2xl text-xs font-medium outline-none focus:border-[#0098db]">
           <option value="All">All statuses</option>
           {STATUSES.map(s => <option key={s} value={s}>{s}</option>)}
         </select>
@@ -251,7 +251,7 @@ export const IncidentsPage: React.FC = () => {
                 </div>
                 {isParent && !selected.parentAcknowledged && (
                   <button onClick={() => handleAcknowledge(selected)}
-                    className="w-full py-2.5 rounded-2xl bg-[#1B4332] hover:bg-green-900 text-white text-sm font-bold transition-colors flex items-center justify-center gap-2">
+                    className="w-full py-2.5 rounded-2xl bg-[#0098db] hover:bg-green-900 text-white text-sm font-bold transition-colors flex items-center justify-center gap-2">
                     <Check className="w-4 h-4" /> Acknowledge this incident
                   </button>
                 )}
@@ -282,7 +282,7 @@ export const IncidentsPage: React.FC = () => {
                 <div>
                   <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider block mb-1.5">Child</label>
                   <select value={form.childId} onChange={e => setForm(f => ({ ...f, childId: e.target.value }))} required
-                    className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-medium outline-none focus:border-[#1B4332]">
+                    className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-medium outline-none focus:border-[#0098db]">
                     <option value="">Select child...</option>
                     {children.map(c => <option key={c.id} value={c.id}>{c.name}</option>)}
                   </select>
@@ -291,44 +291,44 @@ export const IncidentsPage: React.FC = () => {
                   <div>
                     <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider block mb-1.5">Date</label>
                     <input type="date" value={form.date} onChange={e => setForm(f => ({ ...f, date: e.target.value }))} required
-                      className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-medium outline-none focus:border-[#1B4332]" />
+                      className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-medium outline-none focus:border-[#0098db]" />
                   </div>
                   <div>
                     <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider block mb-1.5">Time</label>
                     <input value={form.time} onChange={e => setForm(f => ({ ...f, time: e.target.value }))} placeholder="e.g. 10:30 AM"
-                      className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-medium outline-none focus:border-[#1B4332]" />
+                      className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-medium outline-none focus:border-[#0098db]" />
                   </div>
                 </div>
                 <div className="grid grid-cols-2 gap-3">
                   <div>
                     <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider block mb-1.5">Type</label>
                     <select value={form.type} onChange={e => setForm(f => ({ ...f, type: e.target.value as IncidentType }))}
-                      className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-medium outline-none focus:border-[#1B4332]">
+                      className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-medium outline-none focus:border-[#0098db]">
                       {INCIDENT_TYPES.map(t => <option key={t} value={t}>{t}</option>)}
                     </select>
                   </div>
                   <div>
                     <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider block mb-1.5">Location</label>
                     <input value={form.location} onChange={e => setForm(f => ({ ...f, location: e.target.value }))} placeholder="e.g. Playground"
-                      className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-medium outline-none focus:border-[#1B4332]" />
+                      className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-medium outline-none focus:border-[#0098db]" />
                   </div>
                 </div>
                 <div>
                   <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider block mb-1.5">Description</label>
                   <textarea value={form.description} onChange={e => setForm(f => ({ ...f, description: e.target.value }))} required rows={2}
                     placeholder="What happened?" style={{ resize: 'none' }}
-                    className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-medium outline-none focus:border-[#1B4332]" />
+                    className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-medium outline-none focus:border-[#0098db]" />
                 </div>
                 <div>
                   <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider block mb-1.5">Action taken</label>
                   <textarea value={form.actionTaken} onChange={e => setForm(f => ({ ...f, actionTaken: e.target.value }))} required rows={2}
                     placeholder="First aid, called parents, etc." style={{ resize: 'none' }}
-                    className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-medium outline-none focus:border-[#1B4332]" />
+                    className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-medium outline-none focus:border-[#0098db]" />
                 </div>
                 <div>
                   <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider block mb-1.5">Witness (optional)</label>
                   <input value={form.witness} onChange={e => setForm(f => ({ ...f, witness: e.target.value }))} placeholder="Staff member who witnessed"
-                    className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-medium outline-none focus:border-[#1B4332]" />
+                    className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-medium outline-none focus:border-[#0098db]" />
                 </div>
                 <div className="flex gap-2 pt-1">
                   <button type="button" onClick={() => setShowModal(false)} className="flex-1 py-2.5 rounded-2xl border border-slate-200 text-sm font-bold text-slate-600 hover:bg-slate-50 transition-colors">Cancel</button>
