@@ -1,0 +1,124 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Helper function to check if the user is authenticated
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    // Helper to get user profile document
+    function getUserData() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid)).data;
+    }
+
+    // Check roles
+    function isAdmin() {
+      return isAuthenticated() && getUserData().role == 'admin';
+    }
+
+    function isStaff() {
+      return isAuthenticated() && getUserData().role == 'staff';
+    }
+
+    function isParent() {
+      return isAuthenticated() && getUserData().role == 'parent';
+    }
+
+    // Match users collection
+    match /users/{userId} {
+      allow read: if isAuthenticated();
+      allow write: if isAdmin() || (isAuthenticated() && request.auth.uid == userId);
+    }
+
+    // Match children collection
+    match /children/{childId} {
+      allow create, update, delete: if isAdmin();
+      allow read: if isAdmin() || isStaff() || (isParent() && getUserData().assignedChildId == childId);
+    }
+
+    // Match attendance collection
+    match /attendance/{attendanceId} {
+      allow create, update, delete: if isAdmin() || isStaff();
+      allow read: if isAdmin() || isStaff() || (isParent() && getUserData().assignedChildId == resource.data.childId);
+    }
+
+    // Match daily_updates collection
+    match /daily_updates/{updateId} {
+      allow create, update, delete: if isAdmin() || isStaff();
+      allow read: if isAdmin() || isStaff() || (isParent() && getUserData().assignedChildId == resource.data.childId);
+    }
+
+    // Match notifications collection
+    match /notifications/{notificationId} {
+      allow create, update, delete: if isAdmin();
+      allow read: if isAuthenticated();
+    }
+
+    // Match user_notifications collection
+    match /user_notifications/{userNotificationId} {
+      allow read, write: if isAuthenticated() && request.auth.uid == resource.data.userId;
+      allow create: if isAuthenticated();
+    }
+
+    // Match fees collection
+    match /fees/{feeId} {
+      allow create, update, delete: if isAdmin();
+      allow read: if isAuthenticated();
+    }
+
+    // Match payments collection
+    match /payments/{paymentId} {
+      allow create, update, delete: if isAdmin();
+      allow read: if isAdmin() || (isParent() && getUserData().assignedChildId == resource.data.childId);
+    }
+
+    // Match authorized_pickups collection
+    match /authorized_pickups/{pickupId} {
+      allow create, update, delete: if isAdmin() || (isParent() && getUserData().assignedChildId == request.resource.data.childId);
+      allow read: if isAdmin() || isStaff() || (isParent() && getUserData().assignedChildId == resource.data.childId);
+    }
+
+    // Match pickup_logs collection
+    match /pickup_logs/{logId} {
+      allow create, update, delete: if isAdmin() || isStaff();
+      allow read: if isAdmin() || isStaff() || (isParent() && getUserData().assignedChildId == resource.data.childId);
+    }
+
+    // Match events collection
+    match /events/{eventId} {
+      allow create, update, delete: if isAdmin() || isStaff();
+      allow read: if isAuthenticated();
+    }
+
+    // Match event_registrations collection
+    match /event_registrations/{regId} {
+      allow create, update, delete: if isAuthenticated();
+      allow read: if isAuthenticated();
+    }
+
+    // Match albums collection
+    match /albums/{albumId} {
+      allow create, update, delete: if isAdmin() || isStaff();
+      allow read: if isAuthenticated();
+    }
+
+    // Match media collection
+    match /media/{mediaId} {
+      allow create, update, delete: if isAdmin() || isStaff();
+      allow read: if isAuthenticated();
+    }
+
+    // Match incident_reports collection
+    match /incident_reports/{reportId} {
+      allow create, delete: if isAdmin() || isStaff();
+      allow update: if isAdmin() || isStaff() || (isParent() && getUserData().assignedChildId == resource.data.childId);
+      allow read: if isAdmin() || isStaff() || (isParent() && getUserData().assignedChildId == resource.data.childId);
+    }
+
+    // Match calendar_events collection
+    match /calendar_events/{eventId} {
+      allow create, update, delete: if isAdmin();
+      allow read: if isAuthenticated();
+    }
+  }
+}

@@ -1,0 +1,355 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "User account information and role-based permissions",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "email": { "type": "string" },
+        "name": { "type": "string" },
+        "role": { "type": "string", "enum": ["admin", "staff", "parent"] },
+        "assignedChildId": { "type": "string" },
+        "phoneNumber": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["uid", "email", "name", "role", "createdAt"]
+    },
+    "Child": {
+      "title": "Child",
+      "description": "Details of children enrolled in the daycare",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "photoUrl": { "type": "string" },
+        "name": { "type": "string" },
+        "dob": { "type": "string" },
+        "gender": { "type": "string", "enum": ["Male", "Female", "Other"] },
+        "admissionDate": { "type": "string" },
+        "bloodGroup": { "type": "string" },
+        "allergies": { "type": "string" },
+        "medicalNotes": { "type": "string" },
+        "parentName": { "type": "string" },
+        "parentPhone": { "type": "string" },
+        "emergencyContact": { "type": "string" }
+      },
+      "required": ["id", "name", "dob", "gender", "parentName", "parentPhone", "emergencyContact"]
+    },
+    "Attendance": {
+      "title": "Attendance",
+      "description": "Daily check-in and check-out logs of children",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "childId": { "type": "string" },
+        "date": { "type": "string" },
+        "status": { "type": "string", "enum": ["Present", "Absent", "Picked Up"] },
+        "checkInTime": { "type": "string" },
+        "checkOutTime": { "type": "string" },
+        "staffId": { "type": "string" },
+        "pickedBy": { "type": "string" }
+      },
+      "required": ["id", "childId", "date", "status"]
+    },
+    "DailyUpdate": {
+      "title": "DailyUpdate",
+      "description": "Daily nutrition, activity, sleep and emotional records for a child",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "childId": { "type": "string" },
+        "date": { "type": "string" },
+        "meals": {
+          "type": "object",
+          "properties": {
+            "breakfast": { "type": "string", "enum": ["Completed", "Partial", "Not Eaten"] },
+            "lunch": { "type": "string", "enum": ["Completed", "Partial", "Not Eaten"] },
+            "snacks": { "type": "string", "enum": ["Completed", "Partial", "Not Eaten"] }
+          }
+        },
+        "nap": {
+          "type": "object",
+          "properties": {
+            "startTime": { "type": "string" },
+            "endTime": { "type": "string" }
+          }
+        },
+        "mood": { "type": "string", "enum": ["Happy", "Normal", "Sleepy", "Active"] },
+        "teacherNotes": { "type": "string" },
+        "staffId": { "type": "string" },
+        "timestamp": { "type": "string" }
+      },
+      "required": ["id", "childId", "date", "meals", "nap", "mood", "staffId", "timestamp"]
+    },
+    "NotificationItem": {
+      "title": "NotificationItem",
+      "description": "Announcements, reminders and notices emitted by administrative staff",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "message": { "type": "string" },
+        "type": { "type": "string", "enum": ["General", "Payment", "Emergency", "ChildSpecific"] },
+        "targetAudience": { "type": "string", "enum": ["All Parents", "All Staff", "Selected Parents", "Selected Child"] },
+        "targetId": { "type": "string" },
+        "priority": { "type": "string", "enum": ["Normal", "Important", "Urgent"] },
+        "expiryDate": { "type": "string" },
+        "status": { "type": "string", "enum": ["Draft", "Published"] },
+        "createdAt": { "type": "string" },
+        "createdBy": { "type": "string" }
+      },
+      "required": ["id", "title", "message", "type", "targetAudience", "priority", "status", "createdAt", "createdBy"]
+    },
+    "UserNotificationStatus": {
+      "title": "UserNotificationStatus",
+      "description": "Read and delivery statuses of notifications per user",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "notificationId": { "type": "string" },
+        "read": { "type": "boolean" },
+        "readAt": { "type": "string" }
+      },
+      "required": ["id", "userId", "notificationId", "read"]
+    },
+    "Fee": {
+      "title": "Fee",
+      "description": "Daycare fee definitions",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "amount": { "type": "number" },
+        "dueDate": { "type": "string" },
+        "frequency": { "type": "string", "enum": ["One Time", "Monthly", "Quarterly", "Yearly"] },
+        "targetType": { "type": "string", "enum": ["Individual", "Entire Class"] },
+        "targetId": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "name", "amount", "dueDate", "frequency", "targetType", "createdAt"]
+    },
+    "Payment": {
+      "title": "Payment",
+      "description": "Student payment invoices and status tracking",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "feeId": { "type": "string" },
+        "feeName": { "type": "string" },
+        "childId": { "type": "string" },
+        "childName": { "type": "string" },
+        "amount": { "type": "number" },
+        "paidAmount": { "type": "number" },
+        "pendingAmount": { "type": "number" },
+        "dueDate": { "type": "string" },
+        "paymentDate": { "type": "string" },
+        "paymentMethod": { "type": "string", "enum": ["Cash", "Bank Transfer", "UPI", "Online"] },
+        "status": { "type": "string", "enum": ["Paid", "Partial", "Unpaid"] },
+        "receiptId": { "type": "string" }
+      },
+      "required": ["id", "feeId", "feeName", "childId", "childName", "amount", "paidAmount", "pendingAmount", "dueDate", "status"]
+    },
+    "AuthorizedPickup": {
+      "title": "AuthorizedPickup",
+      "description": "Approved individuals permitted to pick up children",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "childId": { "type": "string" },
+        "name": { "type": "string" },
+        "relationship": { "type": "string" },
+        "phone": { "type": "string" },
+        "idProof": { "type": "string" },
+        "photoUrl": { "type": "string" },
+        "status": { "type": "string", "enum": ["Active", "Inactive"] },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "childId", "name", "relationship", "phone", "idProof", "status", "createdAt"]
+    },
+    "PickupLog": {
+      "title": "PickupLog",
+      "description": "Attendance checkout security logs with identity verification",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "childId": { "type": "string" },
+        "childName": { "type": "string" },
+        "pickerName": { "type": "string" },
+        "relationship": { "type": "string" },
+        "verifiedById": { "type": "string" },
+        "verifiedByName": { "type": "string" },
+        "timestamp": { "type": "string" },
+        "idVerified": { "type": "boolean" },
+        "notes": { "type": "string" }
+      },
+      "required": ["id", "childId", "childName", "pickerName", "relationship", "verifiedById", "verifiedByName", "timestamp", "idVerified"]
+    },
+    "DaycareEvent": {
+      "title": "DaycareEvent",
+      "description": "Daycare programs, festivals, workshops, and school events",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "date": { "type": "string" },
+        "time": { "type": "string" },
+        "venue": { "type": "string" },
+        "maxSeats": { "type": "number" },
+        "rsvpDeadline": { "type": "string" },
+        "targetClass": { "type": "string" },
+        "rsvpCount": { "type": "number" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "title", "description", "date", "time", "venue", "rsvpDeadline", "targetClass", "rsvpCount", "createdAt"]
+    },
+    "EventRegistration": {
+      "title": "EventRegistration",
+      "description": "RSVPs for daycare events and programs",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "eventId": { "type": "string" },
+        "childId": { "type": "string" },
+        "childName": { "type": "string" },
+        "parentId": { "type": "string" },
+        "parentName": { "type": "string" },
+        "status": { "type": "string", "enum": ["Yes", "No", "Undecided"] },
+        "timestamp": { "type": "string" }
+      },
+      "required": ["id", "eventId", "childId", "childName", "parentId", "parentName", "status", "timestamp"]
+    },
+    "MediaAlbum": {
+      "title": "MediaAlbum",
+      "description": "Class photo and video albums",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "date": { "type": "string" },
+        "description": { "type": "string" },
+        "coverUrl": { "type": "string" },
+        "classTag": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "title", "date", "description", "coverUrl", "classTag", "createdAt"]
+    },
+    "MediaItem": {
+      "title": "MediaItem",
+      "description": "Individual photos or video items inside class albums",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "albumId": { "type": "string" },
+        "url": { "type": "string" },
+        "type": { "type": "string", "enum": ["photo", "video"] },
+        "title": { "type": "string" },
+        "uploadedAt": { "type": "string" }
+      },
+      "required": ["id", "albumId", "url", "type", "uploadedAt"]
+    },
+    "IncidentReport": {
+      "title": "IncidentReport",
+      "description": "Safety log reporting injury, behavioral, or illness cases",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "childId": { "type": "string" },
+        "childName": { "type": "string" },
+        "date": { "type": "string" },
+        "time": { "type": "string" },
+        "type": { "type": "string", "enum": ["Injury", "Behavioral", "Illness", "Other"] },
+        "location": { "type": "string" },
+        "description": { "type": "string" },
+        "actionTaken": { "type": "string" },
+        "witness": { "type": "string" },
+        "status": { "type": "string", "enum": ["Reported", "Under Review", "Resolved"] },
+        "parentAcknowledged": { "type": "boolean" },
+        "parentAcknowledgeName": { "type": "string" },
+        "parentAcknowledgeDate": { "type": "string" }
+      },
+      "required": ["id", "childId", "childName", "date", "time", "type", "location", "description", "actionTaken", "witness", "status", "parentAcknowledged"]
+    },
+    "CalendarEvent": {
+      "title": "CalendarEvent",
+      "description": "Unified schedule event showing holidays, meetings, due dates, birthdays",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "date": { "type": "string" },
+        "type": { "type": "string", "enum": ["Holiday", "Event", "FeeDue", "Birthday", "Notice"] },
+        "description": { "type": "string" },
+        "targetId": { "type": "string" }
+      },
+      "required": ["id", "title", "date", "type", "description"]
+    }
+  },
+  "firestore": {
+    "users": {
+      "schema": { "$ref": "#/entities/UserProfile" },
+      "description": "Store user profiles with respective roles"
+    },
+    "children": {
+      "schema": { "$ref": "#/entities/Child" },
+      "description": "Child enrollment directory"
+    },
+    "attendance": {
+      "schema": { "$ref": "#/entities/Attendance" },
+      "description": "Attendance history of children"
+    },
+    "daily_updates": {
+      "schema": { "$ref": "#/entities/DailyUpdate" },
+      "description": "Logs of meals, nap, mood, and teacher feedback"
+    },
+    "notifications": {
+      "schema": { "$ref": "#/entities/NotificationItem" },
+      "description": "System-wide broadcasts and parent updates"
+    },
+    "user_notifications": {
+      "schema": { "$ref": "#/entities/UserNotificationStatus" },
+      "description": "Read/Unread mapping table"
+    },
+    "fees": {
+      "schema": { "$ref": "#/entities/Fee" },
+      "description": "Daycare Fee structures created by admin"
+    },
+    "payments": {
+      "schema": { "$ref": "#/entities/Payment" },
+      "description": "Fee payment records and status invoices"
+    },
+    "authorized_pickups": {
+      "schema": { "$ref": "#/entities/AuthorizedPickup" },
+      "description": "List of individuals allowed to pick up a child"
+    },
+    "pickup_logs": {
+      "schema": { "$ref": "#/entities/PickupLog" },
+      "description": "Checkout security logs when a child leaves"
+    },
+    "events": {
+      "schema": { "$ref": "#/entities/DaycareEvent" },
+      "description": "School events, programs, workshops, and schedules"
+    },
+    "event_registrations": {
+      "schema": { "$ref": "#/entities/EventRegistration" },
+      "description": "RSVPs for school events and programs"
+    },
+    "albums": {
+      "schema": { "$ref": "#/entities/MediaAlbum" },
+      "description": "Photo/Video albums for class classes"
+    },
+    "media": {
+      "schema": { "$ref": "#/entities/MediaItem" },
+      "description": "Media items associated with albums"
+    },
+    "incident_reports": {
+      "schema": { "$ref": "#/entities/IncidentReport" },
+      "description": "Safety, illness, or behavioral incident logs"
+    },
+    "calendar_events": {
+      "schema": { "$ref": "#/entities/CalendarEvent" },
+      "description": "Unified daycare calendar schedules"
+    }
+  }
+}

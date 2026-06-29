@@ -1,0 +1,6 @@
+{
+  "name": "Aangan Daycare Management",
+  "description": "A comprehensive daycare management system for administrators, staff, and parents.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
